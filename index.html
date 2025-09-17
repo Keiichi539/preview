@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+  <title>WebView 画像表示テスト</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>WebView 画像表示テスト</h1>
+    <p>左右16pxの余白・縮小のみ（<code>max-width</code>指定）・ピンチズームの挙動を確認できます。</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label>画像選択:
+        <select id="srcSelect">
+          <option value="page-001.png" selected>サンプル 2000px</option>
+          <option value="page-002.png">サンプル 1200px</option>
+        </select>
+      </label>
+      <label>原寸上限（max-width）:
+        <select id="maxSelect">
+          <option value="1200" selected>1200px</option>
+          <option value="2000">2000px</option>
+          <option value="none">なし（制限しない）</option>
+        </select>
+      </label>
+    </section>
+
+    <img id="img" class="diagram" src="page-001.png" alt="テスト画像">
+
+    <section class="stats" id="stats"></section>
+    <p class="hint">※ ピンチアウトで拡大できます（ページの<meta name="viewport">で user-scalable=yes）。</p>
+  </main>
+
+  <footer>
+    <p>ヒント：このHTMLをAndroid/iOSのWebViewに読み込ませて同じ表示を確認できます。</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
